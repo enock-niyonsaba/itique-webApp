@@ -20,7 +20,6 @@ const HeroSection = () => {
             loop: true,
             delay: 40,
             deleteSpeed: 20,
-            pauseFor: 2500,
           }}
         />
       </div>
