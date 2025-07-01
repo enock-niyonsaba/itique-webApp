@@ -1,3 +1,5 @@
+'use client';
+import { motion } from 'framer-motion';
 import React from 'react';
 
 const testimonials = [
@@ -13,7 +15,13 @@ const testimonials = [
 
 const TestimonialsSection = () => {
   return (
-    <section className="max-w-5xl mx-auto py-16 px-4">
+    <motion.section
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.7, ease: 'easeInOut' }}
+      className="max-w-5xl mx-auto py-16 px-4"
+    >
       <h2 className="text-3xl md:text-4xl font-bold text-center text-[#1F3A93] mb-12">Testimonials & Investor Appeal</h2>
       <div className="flex flex-col md:flex-row gap-8 mb-8 items-center justify-center">
         {testimonials.map((t, idx) => (
@@ -28,7 +36,7 @@ const TestimonialsSection = () => {
         <p className="text-lg mb-2">Smart public transport is a multi-billion dollar market with rapid growth potential.</p>
         <p className="text-base opacity-90">Scalable, future-proof, and ready for global expansion. Join us in revolutionizing mobility.</p>
       </div>
-    </section>
+    </motion.section>
   );
 };
 
